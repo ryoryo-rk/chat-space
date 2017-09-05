@@ -23,3 +23,40 @@ Things you may want to cover:
 
 * ...
 
+## user_groupテーブル
+
+|column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+
+## messageテーブル
+
+|column|Type|Options|
+|------|----|-------|
+
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|content|string|
+|image|string|
+
+### Assosiation
+- belongs_to :group
+- belongs_to :user
+
+
+ ##usersテーブル
+
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false, add_index :users, :name, unique: true|
+|email|string|null: false, add_index :users, :email, unique: true|
+
+### Assosiation
+-has_meny :messages
+-has_many :user_group
