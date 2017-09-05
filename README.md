@@ -39,11 +39,10 @@ Things you may want to cover:
 
 |column|Type|Options|
 |------|----|-------|
-
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|content|string|
-|image|string|
+|content|string|null: false, foreign_key: true|
+|image|string|null: false, foreign_key: true|
 
 ### Assosiation
 - belongs_to :group
@@ -55,11 +54,11 @@ Things you may want to cover:
 |column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index:true, unique: true|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 
 ### Assosiation
--has_meny :messages
--has_many :user_group
+- has_many :messages
+- has_many :user_group
 
 
  ##groupsテーブル
@@ -69,4 +68,4 @@ Things you may want to cover:
 |group_name|string|null: false|
 
 ### Assosiation
--has_many :messages
+- has_many :messages
