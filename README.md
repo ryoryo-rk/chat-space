@@ -31,7 +31,7 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :groups
 - belongs_to :user
 
 
@@ -59,14 +59,15 @@ Things you may want to cover:
 
 ### Assosiation
 -has_meny :messages
--has_many :user_group
+-has_many :user_group, through: :users_group
 
 
  ##groupsテーブル
 
 |column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Assosiation
 -has_many :messages
+-has_many :users, through: :users_group
