@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## user_groupテーブル
+## users_groupテーブル
 
 |column|Type|Options|
 |------|----|-------|
@@ -54,9 +54,19 @@ Things you may want to cover:
 
 |column|Type|Options|
 |------|----|-------|
-|name|string|null: false, add_index :users, :name, unique: true|
-|email|string|null: false, add_index :users, :email, unique: true|
+|name|string|null: false, index:true, unique: true|
+|email|string|null: false|
 
 ### Assosiation
 -has_meny :messages
 -has_many :user_group
+
+
+ ##groupsテーブル
+
+|column|Type|Options|
+|------|----|-------|
+|group_name|string|null: false|
+
+### Assosiation
+-has_many :messages
