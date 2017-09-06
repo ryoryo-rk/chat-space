@@ -1,27 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 ## users_groupテーブル
 
@@ -39,11 +17,10 @@ Things you may want to cover:
 
 |column|Type|Options|
 |------|----|-------|
-
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|content|string|
-|image|string|
+|content|string|null: false, foreign_key: true|
+|image|string|null: false, foreign_key: true|
 
 ### Assosiation
 - belongs_to :group
@@ -55,11 +32,16 @@ Things you may want to cover:
 |column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index:true, unique: true|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 
 ### Assosiation
+<<<<<<< HEAD
 -has_meny :messages
 -has_many :user_group, through: :users_group
+=======
+- has_many :messages
+- has_many :user_group
+>>>>>>> origin/作業用
 
 
  ##groupsテーブル
@@ -69,5 +51,9 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Assosiation
+<<<<<<< HEAD
 -has_many :messages
 -has_many :users, through: :users_group
+=======
+- has_many :messages
+>>>>>>> origin/作業用
