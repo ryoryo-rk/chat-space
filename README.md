@@ -7,6 +7,8 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|add_index :users_group, :user_id|
+|add_index :users_group, :group_id
 
 ### Association
 - belongs_to :group
@@ -19,8 +21,10 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|content|string|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
+|content|string| foreign_key: true|
+|image|string| foreign_key: true|
+|add_index :message, :user_id|
+|add_index :message, :group_id|
 
 ### Assosiation
 - belongs_to :group
@@ -36,7 +40,7 @@
 
 ### Assosiation
 -has_meny :messages
--has_many :group, through: :users_group
+-has_many :users_groups, through: :users_group
 
 
  ##groupsテーブル
@@ -47,5 +51,5 @@
 
 ### Assosiation
 -has_many :messages
--has_many :users, through: :users_group
+-has_many :users, through: :users_groups
 
