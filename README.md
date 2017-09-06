@@ -35,13 +35,8 @@
 |email|string|null: false, unique: true|
 
 ### Assosiation
-<<<<<<< HEAD
 -has_meny :messages
 -has_many :user_group, through: :users_group
-=======
-- has_many :messages
-- has_many :user_group
->>>>>>> origin/作業用
 
 
  ##groupsテーブル
@@ -51,9 +46,6 @@
 |name|string|null: false|
 
 ### Assosiation
-<<<<<<< HEAD
 -has_many :messages
 -has_many :users, through: :users_group
-=======
-- has_many :messages
->>>>>>> origin/作業用
+
