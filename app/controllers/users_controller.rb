@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def edit
-  	@user = User.find(params[:id])
+
   end
 
   def update
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       edit_user_session_path
+    end
 
   end
 
