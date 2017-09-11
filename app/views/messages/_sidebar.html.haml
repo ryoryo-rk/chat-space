@@ -1,0 +1,16 @@
+.sidebar
+  .sidebar__user
+    %p.sidebar__user__username k-rysk
+    = link_to "", root_path, class: "sidebar__user__btn-right fa fa-cog"
+    = link_to "", edit_user_registration_path(current_user.id), class: "sidebar__user__btn-left fa fa-pencil-square-o"
+
+  .sidebar__groups-list
+    .sidebar__group
+      %p.group-name chat-group1
+      %p.group-message message1
+    .sidebar__group
+      %p.group-name chat-group2
+      %p.group-name message2
+    .sidebar__group
+      %p.group-name chat-group1
+      %p.group-message message3

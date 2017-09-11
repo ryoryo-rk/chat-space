@@ -2,57 +2,39 @@
 %html
   %head
     %meta{content: "text/html; charset=utf-8", 'http-equiv': "Content-Type"}/
-     :css
-   %body
-     = yield
+    = render partial: "sidebar"
 
-    .sidebar
-    	.sidebar__user
-       		%p.sidebar__user__username k-rysk
-       		%i.sidebar__user__btn-right.fa.fa-cog
-         	%i.sidebar__user__btn-left.fa.fa-pencil-square-o
+    .contents
+      .contents__header
+        .contents__header__information
+          %p.contents__header__information-name chat-group-3
+          %p.contents__header__information-member-name MEMBER:ryosuke
 
-      .sidebar__groups-list
-      	.sidebar__group
-        	%p.group-name chat-group1
-        	%p.group-message message1
-        .sidebar__group
-        	%p.group-name chat-group2
-        	%p.group-name message2
-        .sidebar__group
-        	%p.group-name chat-group1
-        	%p.group-message message3
+        .contents__header__edit
+          =link_to "edit", root_path, class: "contents__header__edit-btn"
 
-      .contents
-      	.contents__header
-        	.contents__header__information
-            	%p.contents__header__information-name chat-group-3
-            	%p.contents__header__information-member-name MEMBER:ryosuke
+      .contents__body
+        .contents__body__message-list
+          .contents__body__message
+            .contents__body__message-name ryosuke
+            .contents__body__message-time 2017/09/06 18:44
+            .contents__body__message-text こんにちは
+          .contents__body__message
+            .contents__body__message-name ryosuke
+            .contents__body__message-time 2017/09/06 18:44
+            .contents__body__message-text さようなら
+          .contents__body__message
+            .contents__body__message-name ryosuke
+            .contents_body__message-time 2017/09/06 18:44
+            .contents__body__message-text ありがとう
+          .contents__body__message
+            .contents__body__message-name ryosuke
+            .contents__body__message-time 2017/09/06 18:44
+            .contents__body__message-text こんばんは
 
-        	.contents__header__edit edit
-
-        .contents__body
-        	.contents__body__message-list
-            	.contents__body__message
-                	.contents__body__message-name ryosuke
-                	.contents__body__message-time 2017/09/06 18:44
-            	    .contents__body__message-text こんにちは
-            	.contents__body__message
-            		.contents__body__message-name ryosuke
-                	.contents__body__message-time 2017/09/06 18:44
-                    .contents__body__message-text さようなら
-                .contents__body__message
-                	.contents__body__message-name ryosuke
-              		.contents_body__message-time 2017/09/06 18:44
-          	        .contents__body__message-text ありがとう
-                .contents__body__message
-         	    	.contents__body__message-name ryosuke
-                	.contents__body__message-time 2017/09/06 18:44
-                    .contents__body__message-text こんばんは
-
-        .contents__footer
-        	.contents__footer__from
-            	%input.field{type: "text", placeholder: "type a message"}
-        	.contents__footer__btn
-          		%i.input-btn.fa.fa-picture-o
-            	%input.button{type: "submit", value:"Send"}
+      .contents__footer
+        .contents__footer__form
+          %input.field{type: "text", placeholder: "type a message", class: "form"}
+        .contents__footer__btn
+          %i.input-btn.fa.fa-picture-o
+          %input.button{type: "submit", value:"Send"}
