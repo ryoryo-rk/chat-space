@@ -33,8 +33,9 @@
             .contents__body__message-text こんばんは
 
       .contents__footer
-        .contents__footer__form
-          %input.field{type: "text", placeholder: "type a message", class: "form"}
-        .contents__footer__btn
-          %i.input-btn.fa.fa-picture-o
-          %input.button{type: "submit", value:"Send"}
+        %form.contents__bottom__form
+          %input.contents__bottom__text{placeholder: "Type a message"}
+          %label.contents__bottom__image
+            %i.fa.fa-picture-o.contents__bottom__icon
+            %input.contents__bottom__upload{type: "file", id: "fileUpload"}
+          %input.contents__bottom__button{type: "submit", value: "Send"}

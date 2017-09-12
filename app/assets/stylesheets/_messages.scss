@@ -91,6 +91,7 @@ body {
     		color: $btnColorBlue;
     		font-size: 15px;
     		border: 1px solid;
+    		display: inline-block;
         }
     }
 
@@ -130,45 +131,38 @@ body {
   	    }
     }
 //フォームの部分
-	&__footer {
-		posision: fixed;
-		bottom: 0;
-  		height: 90px;
-  		padding: 0 40px;
-  		width: 100%;
-
-
-  		&__form {
-  	  		height: 50px;
-  	  		width: 100px;
-  	  		padding: 20px 10px;
-  	  		margin: 20px 0;
-  	  		font-size: 16px;
-  	  		color: #434A54;
-  	  		float:left;
-  	    }
-
-    	&__btn {
-      		float: left;
-      		height: 50px;
-
-      		.input-btn {
-      			padding-right: 10px;
-            }
-
-        	.button {
-      			background-color: $btnColorBlue;
-      			border: none;
-      			color: #FFFFFF;
-      			height: 50px;
-      			width: 100px;
-      			margin: 20px 0 0 15px;
-            }
-        }
+	&__bottom {
+    	height: 90px;
+    	background-color: #CCC;
+    	padding: 0 40px;
+    	&__form {
+        	width: 100vw;
+      	}
+        	&__image {
+         		background-color: white;
+         		cursor: pointer;
+         		position: relative;
+         		right: 2vw;
+       		}
+        		&__icon  {
+           			cursor: pointer;
+         		}
+         		&__text {
+           			padding: 10px 0 10px 10px;
+           			border: none;
+           			position: relative;
+           			width: 70vw;
+        		}
+         		&__upload {
+           			display: none;
+         		}
+       		&__button {
+         		margin: 20px 0;
+         		border: solid 2px #00BFFF;
+         		padding: 7px 20px;
+        		display: inline-block;
+        		background-color: #00BFFF;
+        		color: white;
+        	}
     }
-}
-
-.form {
-	width: 100px;
-	height: 20px;
 }
