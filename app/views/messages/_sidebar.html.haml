@@ -1,8 +1,10 @@
 .sidebar
   .sidebar__user
     %p.sidebar__user__username k-rysk
-    = link_to "", root_path, class: "sidebar__user__btn-right fa fa-cog"
-    = link_to "", edit_user_registration_path(current_user.id), class: "sidebar__user__btn-left fa fa-pencil-square-o"
+    = link_to edit_user_path(current_user.id), class: "sidebar__user__btn-right" do
+      %i.fa.fa-cog
+    = link_to new_group_path, class: "sidebar__user__btn-left" do
+      %i.fa.fa-pencil-square-o
 
   .sidebar__groups-list
     .sidebar__group
