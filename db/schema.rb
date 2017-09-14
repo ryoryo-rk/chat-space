@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20170912091150) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -43,13 +42,12 @@ ActiveRecord::Schema.define(version: 20170912091150) do
     t.datetime "updated_at",                          null: false
     t.string   "name",                                null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "users_groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "group_id",   null: false
+    t.integer  "user_id"
+    t.integer  "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_users_groups_on_group_id", using: :btree
