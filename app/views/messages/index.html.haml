@@ -7,11 +7,11 @@
     .contents
       .contents__header
         .contents__header__information
-          %p.contents__header__information-name chat-group-3
-          %p.contents__header__information-member-name MEMBER:ryosuke
+          %p.contents__header__information-name #{@group.name}
+          %p.contents__header__information-member-name MEMBER:#{current_user.name}
 
         .contents__header__edit
-          =link_to "edit", root_path, class: "contents__header__edit-btn"
+          =link_to "edit", edit_group_path(@group.id), class: "contents__header__edit-btn"
 
       .contents__body
         .contents__body__message-list
