@@ -1,5 +1,9 @@
 class GroupsController < ApplicationController
 
+  def index
+    @groups = current_user.groups
+  end
+
   def new
     @group = Group.new
   end
@@ -14,9 +18,16 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
   end
 
   def update
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      redirect_to :root, notice: "グループの編集を完了！"
+    else
+      render :edit
+    end
   end
 
   private

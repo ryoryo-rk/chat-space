@@ -6,8 +6,5 @@
     = link_to new_group_path, class: "sidebar__user__btn-left" do
       %i.fa.fa-pencil-square-o
 
-  - current_user.groups.each do |group|
-    .sidebar__groups-list
-      .sidebar__group
-        = group.name
-        %p.group-message 新着メッセージはまだありません
+  .sidebar__groups-list
+    =render partial: 'group', locals: {groups: @groups}
