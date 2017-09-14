@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to :root, notice: "グループの作成に成功しました!"
     else
-      redirect_to new_group_path, alert: "入力は正しいですか？"
+      render :new, alert: "入力は正しいですか？"
     end
   end
 
