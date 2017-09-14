@@ -6,14 +6,8 @@
     = link_to new_group_path, class: "sidebar__user__btn-left" do
       %i.fa.fa-pencil-square-o
 
-  - groups.each do |group|
-    %ul.sidebar__groups-list
-      %li.sidebar__group
-        #{group.name}
+  - current_user.groups.each do |group|
+    .sidebar__groups-list
+      .sidebar__group
+        = group.name
         %p.group-message message1
-      %li.sidebar__group
-        %p.group-name
-        %p.group-name message2
-      %li.sidebar__group
-        %p.group-name
-        %p.group-message message3
