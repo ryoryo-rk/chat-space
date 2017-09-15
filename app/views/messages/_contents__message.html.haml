@@ -1,0 +1,10 @@
+- @group.messages.each do |message|
+  .contents__body__message-list
+    .contents__body__message
+      .contents__body__message-name
+        = message.user.name
+      .contents__body__message-time
+        = format_posted_time(message.created_at)
+      .contents__body__message-text
+        = message.content
+        = image_tag message.image, size:'120×180' if message.image.present?
