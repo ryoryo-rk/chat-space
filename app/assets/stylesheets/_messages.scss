@@ -131,38 +131,38 @@ body {
   	    }
     }
 //フォームの部分
-	&__footer {
-    	height: 90px;
-    	background-color: #CCC;
-    	padding: 0 40px;
-  	&__form {
-      	width: 100vw;
-    	}
+  &__footer {
+      height: 90px;
+      background-color: $backColorGray;
+      padding: 0 40px;
+    &__form {
+        width: 100vw;
+      }
       &__field {
-     		background-color: white;
-     		cursor: pointer;
-     		position: relative;
-     		right: 2vw;
-   		}
-    		&__icon  {
-       			cursor: pointer;
-     		}
-     	  &__text {
-       			padding: 10px 0 10px 10px;
-       			border: none;
-       			position: relative;
-       			width: 70vw;
-    		}
-     		&__upload {
-       			display: none;
-     		}
+        background-color: $backColorWhite;
+        cursor: pointer;
+        position: relative;
+        right: 2vw;
+      }
+        &__icon  {
+            cursor: pointer;
+        }
+        &__text {
+            padding: 10px 0 10px 10px;
+            border: none;
+            position: relative;
+            width: 70vw;
+        }
+        &__upload {
+            display: none;
+        }
       &__button {
         margin: 20px 0;
-     	  border: solid 2px #00BFFF;
-     	  padding: 7px 20px;
-    	  display: inline-block;
-    	  background-color: $backColorRightBlue;
-    	  color: $fontColorWhite;
+        border: solid 2px $backColorRightBlue;
+        padding: 7px 20px;
+        display: inline-block;
+        background-color: $backColorRightBlue;
+        color: $fontColorWhite;
       }
   }
 }
