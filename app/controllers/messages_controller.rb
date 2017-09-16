@@ -15,7 +15,6 @@ class MessagesController < ApplicationController
   	@message = Message.new(message_params)
   	if @message.save
   	  flash.now[:notice] = "送信しました"
-  	  binding.pry
   	  redirect_to group_messages_path(@group.id)
   	else
   	  flash.now[:alert] = "画像かメッセージを入力してください"
