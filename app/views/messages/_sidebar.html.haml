@@ -10,4 +10,5 @@
     .sidebar__groups-list
       .sidebar__group
         = group.name
-        %p.group-message 新着メッセージはまだありません
+        %p.group-message
+          = group.message_display if group.messages.present?

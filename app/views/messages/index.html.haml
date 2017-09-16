@@ -1,41 +1,22 @@
-!!!
-%html
-  %head
-    %meta{content: "text/html; charset=utf-8", 'http-equiv': "Content-Type"}/
-    = render partial: "sidebar", locals: {groups: @groups}
+= render partial: "sidebar", locals: {groups: @groups}
 
-    .contents
-      .contents__header
-        .contents__header__information
-          %p.contents__header__information-name #{@group.name}
-          %p.contents__header__information-member-name MEMBER:#{current_user.name}
+.contents
+  .contents__header
+    .contents__header__information
+      %p.contents__header__information-name #{@group.name}
+      %p.contents__header__information-member-name MEMBER:#{current_user.name}
 
-        .contents__header__edit
-          =link_to "edit", edit_group_path(@group.id), class: "contents__header__edit-btn"
+    .contents__header__edit
+      =link_to "edit", edit_group_path(@group.id), class: "contents__header__edit-btn"
 
-      .contents__body
-        .contents__body__message-list
-          .contents__body__message
-            .contents__body__message-name ryosuke
-            .contents__body__message-time 2017/09/06 18:44
-            .contents__body__message-text こんにちは
-          .contents__body__message
-            .contents__body__message-name ryosuke
-            .contents__body__message-time 2017/09/06 18:44
-            .contents__body__message-text さようなら
-          .contents__body__message
-            .contents__body__message-name ryosuke
-            .contents_body__message-time 2017/09/06 18:44
-            .contents__body__message-text ありがとう
-          .contents__body__message
-            .contents__body__message-name ryosuke
-            .contents__body__message-time 2017/09/06 18:44
-            .contents__body__message-text こんばんは
+  .contents__body
+    = render partial: "contents__message"
 
-      .contents__footer
-        %form.contents__bottom__form
-          %input.contents__bottom__text{placeholder: "Type a message"}
-          %label.contents__bottom__image
-            %i.fa.fa-picture-o.contents__bottom__icon
-            %input.contents__bottom__upload{type: "file", id: "fileUpload"}
-          %input.contents__bottom__button{type: "submit", value: "Send"}
+  .contents__footer
+    = form_for [@group,@message] do |f|
+      .contents__footer__form
+        = f.text_field :content, class: "contents__form__field", placeholder: "type a message"
+        %label.contents__footer__image
+          .fa.fa-picture-o
+            = f.file_field :image
+        = f.submit value: "send", class: "contents__form__button"
