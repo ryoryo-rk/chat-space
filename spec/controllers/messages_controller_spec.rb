@@ -4,7 +4,6 @@ require 'rails_helper'
    let(:user) { create(:user) }
    let(:group) { create(:group) }
    let(:message) {create(:message)}
-   let(:users_group) { create(:users_group)}
 
    describe 'GET #index' do
      context "when user login" do
