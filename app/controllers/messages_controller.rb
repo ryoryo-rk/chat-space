@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   def index
   	@groups = current_user.groups
   	@message = Message.new
+    @messages = @group.messages
   end
 
   def new
@@ -13,14 +14,10 @@ class MessagesController < ApplicationController
 
   def create
   	@message = Message.new(message_params)
-  	if @message.save
-  	  flash.now[:notice] = "送信しました"
-  	  redirect_to group_messages_path(@group.id)
-  	else
-  	  flash.now[:alert] = "画像かメッセージを入力してください"
-  	  render :index
-  	end
-
+  	respond_to do |format|
+      format.html { redirect_to group_message_path(@group.id) }
+      format.json
+    end
   end
 
   private
