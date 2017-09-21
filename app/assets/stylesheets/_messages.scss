@@ -99,6 +99,7 @@ body {
 		height: calc(100vh - 15% - 90px);
   		background-color: #AAAAAA;
   		border-top: 1px solid #eeeeee;
+      overflow: scroll;
 
   		&__message-list {
   			padding-top: 46px;

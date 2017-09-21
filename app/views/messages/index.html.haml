@@ -10,7 +10,7 @@
       =link_to "edit", edit_group_path(@group.id), class: "contents__header__edit-btn"
 
   .contents__body
-    = render partial: "contents__message"
+    = render partial: "contents__message", locals: {messages: @messages}
 
   .contents__footer
     = form_for [@group,@message] do |f|
