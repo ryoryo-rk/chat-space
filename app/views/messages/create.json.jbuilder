@@ -32,3 +32,16 @@ json.image_only `<div class="contents__body">
                      </div>
                    </div>
                  </div>`
+
+json.(message & image) `<div class="contents__body">
+		                  <div class="contents__body__message-list">
+		                    <div class="contents__body__message">
+		                      <div class="contents__body__message-name">${message.user__name}</div>
+		                      <div class="contents__body__message-time">${message.time}</div>
+		                      <div class="contents__body__message-text">
+		                        ${message.content}
+		                        ${message.image.url}
+		                      </div>
+		                    </div>
+		                  </div>
+		                </div>`

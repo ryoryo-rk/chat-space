@@ -1,26 +1,8 @@
 $(function(){
   function buildHTML(message){
-    if(message.content && message.image){
-  	  var html = `<div class="contents__body">
-                   <div class="contents__body__message-list">
-                     <div class="contents__body__message">
-                       <div class="contents__body__message-name">${message.user__name}</div>
-                       <div class="contents__body__message-time">${message.time}</div>
-                       <div class="contents__body__message-text">
-                         ${message.content}
-                         ${message.image.url}
-                       </div>
-                     </div>
-                   </div>
-                 </div>`
-      return html;
-    }
-    else if(message.content){
-      var html = message.message_only
-      return html;
-    }
-    else{
-      var html = message.image_only
+  	  var html = (message.content && message.image)?json.(message & image):
+  	             (message.content)?message.message_only:
+  	             message.image_only;
       return html;
     }
 
@@ -38,11 +20,6 @@ $(function(){
       processData: false,
       contentType: false,
     })
-
-
-
-
-
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
