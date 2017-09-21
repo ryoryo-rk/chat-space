@@ -13,7 +13,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-   #binding.pry
   	@message = Message.create(message_params)
   	respond_to do |format|
       format.html { redirect_to group_messages_path(@group.id) }
