@@ -4,11 +4,11 @@ $(function(){
   	  var html = `<div class="contents__body">
                    <div class="contents__body__message-list">
                      <div class="contents__body__message">
-                       <div class="contents__body__message-name">${json.user__name}</div>
-                       <div class="contents__body__message-time">${json.time}</div>
+                       <div class="contents__body__message-name">${message.user__name}</div>
+                       <div class="contents__body__message-time">${message.time}</div>
                        <div class="contents__body__message-text">
                          ${message.content}
-                         ${json.image_tag}
+                         ${message.image.url}
                        </div>
                      </div>
                    </div>
@@ -19,8 +19,8 @@ $(function(){
       var html = `<div class="contents__body">
                    <div class="contents__body__message-list">
                      <div class="contents__body__message">
-                       <div class="contents__body__message-name">${message.user.name}</div>
-                       <div class="contents__body__message-time">${json.time}</div>
+                       <div class="contents__body__message-name">${message.user__name}</div>
+                       <div class="contents__body__message-time">${message.time}</div>
                        <div class="contents__body__message-text">
                          ${message.content}
                        </div>
@@ -33,10 +33,10 @@ $(function(){
       var html = `<div class="contents__body">
                    <div class="contents__body__message-list">
                      <div class="contents__body__message">
-                       <div class="contents__body__message-name">${message.user.name}</div>
-                       <div class="contents__body__message-time">${json.time}</div>
+                       <div class="contents__body__message-name">${message.user__name}</div>
+                       <div class="contents__body__message-time">${message.time}</div>
                        <div class="contents__body__message-text">
-                          ${json.image_tag}
+                          ${message.image.url}
                        </div>
                      </div>
                    </div>
@@ -48,9 +48,8 @@ $(function(){
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action');
     $.ajax({
       url: url,
       type: "POST",
@@ -59,7 +58,13 @@ $(function(){
       processData: false,
       contentType: false,
     })
+
+
+
+
+
     .done(function(data){
+      console.log(data);
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.contents__form__field').val('');
