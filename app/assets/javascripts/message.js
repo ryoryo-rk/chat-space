@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     if(message.content && message.image){
-  	  var url = `<div class="contents__body">
+  	  var html = `<div class="contents__body">
                    <div class="contents__body__message-list">
                      <div class="contents__body__message">
                        <div class="contents__body__message-name">${json.user__name}</div>
@@ -13,10 +13,10 @@ $(function(){
                      </div>
                    </div>
                  </div>`
-      return url;
+      return html;
     }
     else if(message.content){
-      var url = `<div class="contents__body">
+      var html = `<div class="contents__body">
                    <div class="contents__body__message-list">
                      <div class="contents__body__message">
                        <div class="contents__body__message-name">${message.user.name}</div>
@@ -27,10 +27,10 @@ $(function(){
                      </div>
                    </div>
                  </div>`
-      return url;
+      return html;
     }
     else{
-      var url = `<div class="contents__body">
+      var html = `<div class="contents__body">
                    <div class="contents__body__message-list">
                      <div class="contents__body__message">
                        <div class="contents__body__message-name">${message.user.name}</div>
@@ -41,7 +41,7 @@ $(function(){
                      </div>
                    </div>
                  </div>`
-      return url;
+      return html;
     }
 
 }
@@ -55,7 +55,7 @@ $(function(){
       url: url,
       type: "POST",
       data: formData,
-      dataType: 'json'
+      dataType: 'json',
       processData: false,
       contentType: false,
     })
