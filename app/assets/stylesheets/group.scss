@@ -60,6 +60,7 @@
       float: right;
       width: 70%;
     }
+  }
 
   &__label {
     display: block;
@@ -75,10 +76,9 @@
     padding: 10px 15px;
     box-sizing: border-box;
   }
-  }
 
   .chat-group-user {
-    padding: 0 15px;
+    padding: 20px 15px;
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
