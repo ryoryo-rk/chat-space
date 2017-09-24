@@ -30,9 +30,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  def search
-  end
-
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
