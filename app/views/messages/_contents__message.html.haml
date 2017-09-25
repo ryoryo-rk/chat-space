@@ -1,6 +1,6 @@
 - messages.each do |message|
   .contents__body__message-list
-    .contents__body__message
+    .contents__body__message{ 'data-messages-id': message.id }
       .contents__body__message-name
         = message.user.name
       .contents__body__message-time

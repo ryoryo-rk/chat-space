@@ -5,7 +5,11 @@ class MessagesController < ApplicationController
   def index
     @groups = current_user.groups
     @message = Message.new
-    @messages = @group.messages
+    @messages = @group.messages.order('created_at ASC')
+    respond_to do |format|
+      format.html
+      format.json{ @new_message = @group.messages.where('id > ?', params[:id])}
+    end
   end
 
   def new
@@ -13,7 +17,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-  	@message = Message.create(message_params)
+    @message = Message.new(message_params)
+    @message.save
   	respond_to do |format|
       format.html { redirect_to group_messages_path(@group.id) }
       format.json
